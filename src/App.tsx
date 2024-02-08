@@ -1,13 +1,16 @@
-import { useTranslation } from "react-i18next";
-import Navbar from "./shared/components/Navbar";
+import Navbar from "./components/Navbar";
+import { About, Contact, Home, Services } from "./sections";
 
 function App() {
-  const { t } = useTranslation();
-
   return (
     <>
-      <Navbar />
-      <h1></h1>
+      <Home />
+      <div>
+        <Navbar />
+        <About />
+        <Services />
+        <Contact />
+      </div>
     </>
   );
 }
