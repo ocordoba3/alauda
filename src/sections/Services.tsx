@@ -8,7 +8,7 @@ export const Services = () => {
   return (
     <Section id={SECTIONS.services} styles={{ marginBottom: 40 }}>
       <Typography
-        variant="h5"
+        variant="h4"
         sx={{ opacity: "0.4", textAlign: "center", mb: 4 }}
       >
         {`<Nuestros servicios />`}
@@ -36,7 +36,7 @@ export const Services = () => {
               >
                 <AddIcCallTwoTone />
               </Avatar>
-              <Typography>
+              <Typography variant="h6">
                 WEB & MOBILE DESIGN Raw denim typewriter Carles irony. Helvetica
                 farers Blue Bottle, distery vero you probably haven’t heard of
                 them disrupt. Pariatur meh vegan ut.
