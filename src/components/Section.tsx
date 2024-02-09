@@ -19,6 +19,7 @@ export const Section = ({ children, id, styles }: Props) => {
         flexWrap: "wrap",
         justifyContent: "center",
         padding: smallDevice ? "2rem" : "5rem",
+        paddingTop: smallDevice ? "6rem" : "2rem",
         width: "100%",
         ...styles,
       }}

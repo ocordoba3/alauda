@@ -28,8 +28,13 @@ export const Contact = () => {
         sx={{
           backgroundColor: (theme) => theme.palette.background.paper,
           borderRadius: 8,
+          // Should have the same value
+          pb: 4,
+          pr: 4,
+          // Should have the same value
+          pt: 2,
+          pl: 2,
           width: !smallDevice ? "100%" : "50%",
-          p: 2,
         }}
       >
         <Grid item xs={12} md={6}>

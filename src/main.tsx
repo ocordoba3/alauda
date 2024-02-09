@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { I18nextProvider } from "react-i18next";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
+import i18n from "./translations/i18n.ts";
+import light from "./styles/themes/light.tsx";
+
 import App from "./App.tsx";
 import "./index.css";
-import { I18nextProvider } from "react-i18next";
-import i18n from "./translations/i18n.ts";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import light from "./styles/themes/light.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

@@ -1,5 +1,6 @@
 import { SECTIONS } from "../utils/constants";
 import { Button } from "@mui/material";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const SECTIONS_VALUES = Object.values(SECTIONS);
@@ -15,13 +16,23 @@ export const NavbarListItems = ({ smallDevice }: Props) => {
   const links = [home, about, services, contact];
 
   const handleScroll = (element: Element) => {
-    if (element === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      window.scrollTo({
-        top: (document.getElementById(element)?.offsetTop || 0) - 70,
-        behavior: "smooth",
-      });
+    switch (element) {
+      case "home":
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        break;
+      case "about":
+      case "services":
+        window.scrollTo({
+          top: document.getElementById(element)?.offsetTop || 0,
+          behavior: "smooth",
+        });
+        break;
+      default:
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+        break;
     }
   };
 
@@ -29,14 +40,14 @@ export const NavbarListItems = ({ smallDevice }: Props) => {
     <>
       {links.map((el) => (
         <Button
+          id={`link-${el}`}
           key={el}
           onClick={() => handleScroll(el)}
           color="inherit"
           sx={{
-            textDecoration: "none",
             ml: smallDevice ? 0 : 3,
             py: smallDevice ? 2 : 0,
-            px: smallDevice ? 8 : 0,
+            px: smallDevice ? 4 : 0,
           }}
         >
           {t(`general.${el}`)}
