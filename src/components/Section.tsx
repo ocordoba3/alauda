@@ -21,7 +21,7 @@ export const Section = ({ children, id, styles }: Props) => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        padding: smallDevice ? "2rem" : "5rem",
+        padding: !smallDevice ? "0 2rem" : "0 15rem",
         paddingTop: smallDevice ? "6rem" : "2rem",
         width: "100%",
         ...styles,

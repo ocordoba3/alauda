@@ -69,13 +69,13 @@ const theme = (navType: PaletteMode) => {
       },
     },
     typography: {
-      fontFamily: `"Montserrat", "sans-serif"`,
+      fontFamily: `"Montserrat", sans-serif`,
       h1: { fontWeight: 500 },
       h2: { fontWeight: 400 },
       h3: { fontWeight: 300 },
-      h4: { fontWeight: 200 },
-      h5: { fontWeight: 200 },
-      h6: { fontWeight: 200 },
+      h4: { fontWeight: 300 },
+      h5: { fontWeight: 300 },
+      h6: { fontWeight: 300 },
     },
   });
 };

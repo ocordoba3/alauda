@@ -6,20 +6,8 @@
 
 body {
   margin: 0;
-  font-weight: 200 !important;
 }
 
-#home::before,
-#home::after {
-  content: "";
-  height: 2000px;
-  position: absolute;
-  transform: rotate(30deg);
-}
-
-#home::after {
-  top: -40%;
-}
 
 #home #movement_element {
   animation: movement 5s infinite;
@@ -36,21 +24,5 @@ body {
 
   100% {
     scale: 1;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-
-  #home::before,
-  #home::after {
-    border-left: 3px solid $primaryDark;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-
-  #home::before,
-  #home::after {
-    border-left: 3px solid $primaryLight;
   }
 }
