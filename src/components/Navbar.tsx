@@ -2,22 +2,38 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import logo from "/alauda_logo.png";
-import { Drawer, IconButton, useTheme } from "@mui/material";
+import { Drawer, IconButton, PaletteMode, useTheme } from "@mui/material";
 import {
   LightMode as LightModeIcon,
   Menu as MenuIcon,
   ModeNight as ModeNightIcon,
 } from "@mui/icons-material";
 import { NavbarListItems } from "./NavbarListItems";
-import { useCallback, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-export default function Navbar() {
+interface Props {
+  setMode: Dispatch<SetStateAction<PaletteMode>>;
+}
+
+export default function Navbar({ setMode }: Props) {
+  // Hooks & State
+  const { t } = useTranslation();
   const theme = useTheme();
-  const smallDevice = theme.breakpoints.up("md");
   const [openDrawer, setOpenDrawer] = useState(false);
 
+  // Consts
+  const smallDevice = theme.breakpoints.up("md");
   const darkMode = theme.palette.mode === "dark";
 
+  // Methods
+  const handleThemeMode = () => {
+    const mode = darkMode ? "light" : "dark";
+    setMode(mode);
+    localStorage.setItem("theme", mode);
+  };
+
+  // JSX Elements to render
   const renderListItems = useCallback(
     () => <NavbarListItems smallDevice />,
     [smallDevice]
@@ -28,7 +44,7 @@ export default function Navbar() {
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton
-            title="Menu"
+            title={t("navbar.menu")}
             sx={{ display: { xs: "block", md: "none" }, mr: 1 }}
             onClick={() => setOpenDrawer(true)}
           >
@@ -42,11 +58,13 @@ export default function Navbar() {
           </Box>
           {/* HANDLE MODE */}
           <IconButton
-            title={darkMode ? "Light Mode" : "Dark Mode"}
-            sx={{ ml: 1 }}
-            onClick={() =>
-              localStorage.setItem("theme", darkMode ? "light" : "dark")
+            title={
+              darkMode
+                ? t("navbar.switch_to_light_mode")
+                : t("navbar.switch_to_dark_mode")
             }
+            sx={{ ml: 1 }}
+            onClick={handleThemeMode}
           >
             {darkMode ? <LightModeIcon /> : <ModeNightIcon />}
           </IconButton>

@@ -8,7 +8,10 @@ interface Props {
 }
 
 export const Section = ({ children, id, styles }: Props) => {
+  // Hooks
   const theme = useTheme();
+
+  // Consts
   const smallDevice = theme.breakpoints.up("md");
 
   return (

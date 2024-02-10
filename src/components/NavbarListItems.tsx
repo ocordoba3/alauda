@@ -1,46 +1,23 @@
 import { SECTIONS } from "../utils/constants";
 import { Button } from "@mui/material";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
-const SECTIONS_VALUES = Object.values(SECTIONS);
-type Element = (typeof SECTIONS_VALUES)[number];
+import handleScroll from "../helpers/handleScroll";
 
 interface Props {
   smallDevice: boolean;
 }
 
 export const NavbarListItems = ({ smallDevice }: Props) => {
+  // Hooks
   const { t } = useTranslation();
-  const { about, contact, home, services } = SECTIONS;
-  const links = [home, about, services, contact];
 
-  const handleScroll = (element: Element) => {
-    switch (element) {
-      case "home":
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        break;
-      case "about":
-      case "services":
-        window.scrollTo({
-          top: document.getElementById(element)?.offsetTop || 0,
-          behavior: "smooth",
-        });
-        break;
-      default:
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
-        break;
-    }
-  };
+  // Consts
+  const links = Object.values(SECTIONS);
 
   return (
     <>
       {links.map((el) => (
         <Button
-          id={`link-${el}`}
           key={el}
           onClick={() => handleScroll(el)}
           color="inherit"
