@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { About, Contact, Home, Services } from "./sections";
 import theme from "./styles/theme.tsx";
 import { useState } from "react";
+import Footer from "./sections/Footer.tsx";
 
 function App() {
   const [mode, setMode] = useState<PaletteMode>(
@@ -19,6 +20,7 @@ function App() {
           <About />
           <Services />
           <Contact />
+          <Footer />
         </div>
       </ThemeProvider>
     </>

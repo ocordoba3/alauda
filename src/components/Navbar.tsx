@@ -11,6 +11,7 @@ import {
 import { NavbarListItems } from "./NavbarListItems";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import handleScroll from "../helpers/handleScroll";
 
 interface Props {
   setMode: Dispatch<SetStateAction<PaletteMode>>;
@@ -44,14 +45,21 @@ export default function Navbar({ setMode }: Props) {
       <AppBar position="fixed">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton
-            title={t("navbar.menu")}
-            sx={{ display: { xs: "block", md: "none" }, mr: 1 }}
             onClick={() => setOpenDrawer(true)}
+            sx={{ display: { xs: "block", md: "none" }, mr: 1 }}
+            title={t("navbar.menu")}
           >
             <MenuIcon />
           </IconButton>
           {/* LOGO */}
-          <img src={logo} alt="Alauda Logo" loading="lazy" width="100" />
+          <img
+            alt="Alauda Logo"
+            loading="lazy"
+            onClick={() => handleScroll("home")}
+            src={logo}
+            style={{ cursor: "pointer" }}
+            width="100"
+          />
           {/* LIST OF LINKS */}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {renderListItems()}

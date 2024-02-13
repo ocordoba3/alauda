@@ -16,20 +16,22 @@ export const NavbarListItems = ({ smallDevice }: Props) => {
 
   return (
     <>
-      {links.map((el) => (
-        <Button
-          key={el}
-          onClick={() => handleScroll(el)}
-          color="inherit"
-          sx={{
-            ml: smallDevice ? 0 : 3,
-            py: smallDevice ? 2 : 0,
-            px: smallDevice ? 4 : 0,
-          }}
-        >
-          {t(`general.${el}`)}
-        </Button>
-      ))}
+      {links
+        .filter((el) => el !== "home")
+        .map((el) => (
+          <Button
+            key={el}
+            onClick={() => handleScroll(el)}
+            color="inherit"
+            sx={{
+              ml: smallDevice ? 0 : 3,
+              py: smallDevice ? 2 : 0,
+              px: smallDevice ? 4 : 0,
+            }}
+          >
+            {t(`general.${el}`)}
+          </Button>
+        ))}
     </>
   );
 };

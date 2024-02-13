@@ -18,6 +18,9 @@ const es = {
             description: "En Alauda, estamos entusiasmados por la oportunidad de colaborar contigo para llevar tus ideas al siguiente nivel y alcanzar tus objetivos empresariales.",
             title: `<Contactanos />`,
         },
+        footer: {
+            copy_right: "Todos los derechos reservados."
+        },
         general: {
             about: "Acerca de",
             contact: "Contacto",
