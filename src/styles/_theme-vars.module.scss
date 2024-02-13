@@ -1,9 +1,9 @@
 // paper & background
-$lightBackground: #F7F7FF;
+$lightBackground: #f7f7ff;
 $paper: #dfdfe4;
 
 // primary
-$primaryMain: #237CB5;
+$primaryMain: #237cb5;
 $primaryLight: #c4daeb;
 $primaryDark: #071e30;
 $primary200: #377baf;
@@ -11,12 +11,11 @@ $primary300: #346183;
 $primary800: #364e61;
 
 // secondary
-$secondaryMain: #C49991;
+$secondaryMain: #c49991;
 $secondaryLight: #cec2bf;
 $secondaryDark: #51403d;
 $secondary200: #775f5a;
 $secondary800: #694842;
-
 
 // ==============================|| DARK THEME VARIANTS ||============================== //
 
@@ -57,62 +56,61 @@ $grey600: #757575;
 $grey700: #616161;
 $grey900: #212121;
 
-
 // ==============================|| JAVASCRIPT ||============================== //
 
 :export {
-    // paper & background
-    lightBackground: $lightBackground;
-    paper: $paper;
+  // paper & background
+  lightBackground: $lightBackground;
+  paper: $paper;
 
-    // Dark paper & background
-    darkBackground: $darkBackground;
-    darkPaper: $darkPaper;
+  // Dark paper & background
+  darkBackground: $darkBackground;
+  darkPaper: $darkPaper;
 
-    // primary
-    primaryLight: $primaryLight;
-    primary200: $primary200;
-    primary300: $primary300;
-    primaryMain: $primaryMain;
-    primaryDark: $primaryDark;
-    primary800: $primary800;
+  // primary
+  primaryLight: $primaryLight;
+  primary200: $primary200;
+  primary300: $primary300;
+  primaryMain: $primaryMain;
+  primaryDark: $primaryDark;
+  primary800: $primary800;
 
-    // secondary
-    secondaryLight: $secondaryLight;
-    secondary200: $secondary200;
-    secondaryMain: $secondaryMain;
-    secondaryDark: $secondaryDark;
-    secondary800: $secondary800;
+  // secondary
+  secondaryLight: $secondaryLight;
+  secondary200: $secondary200;
+  secondaryMain: $secondaryMain;
+  secondaryDark: $secondaryDark;
+  secondary800: $secondary800;
 
-    // success
-    successLight: $successLight;
-    success200: $success200;
-    successMain: $successMain;
-    successDark: $successDark;
+  // success
+  successLight: $successLight;
+  success200: $success200;
+  successMain: $successMain;
+  successDark: $successDark;
 
-    // error
-    errorLight: $errorLight;
-    errorMain: $errorMain;
-    errorDark: $errorDark;
+  // error
+  errorLight: $errorLight;
+  errorMain: $errorMain;
+  errorDark: $errorDark;
 
-    // orange
-    orangeLight: $orangeLight;
-    orangeMain: $orangeMain;
-    orangeDark: $orangeDark;
+  // orange
+  orangeLight: $orangeLight;
+  orangeMain: $orangeMain;
+  orangeDark: $orangeDark;
 
-    // warning
-    warningLight: $warningLight;
-    warningMain: $warningMain;
-    warningDark: $warningDark;
+  // warning
+  warningLight: $warningLight;
+  warningMain: $warningMain;
+  warningDark: $warningDark;
 
-    // grey
-    grey50: $grey50;
-    grey100: $grey100;
-    grey200: $grey200;
-    grey300: $grey300;
-    grey400: $grey400;
-    grey500: $grey500;
-    grey600: $grey600;
-    grey700: $grey700;
-    grey900: $grey900;
+  // grey
+  grey50: $grey50;
+  grey100: $grey100;
+  grey200: $grey200;
+  grey300: $grey300;
+  grey400: $grey400;
+  grey500: $grey500;
+  grey600: $grey600;
+  grey700: $grey700;
+  grey900: $grey900;
 }

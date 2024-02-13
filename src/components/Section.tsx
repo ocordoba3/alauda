@@ -1,5 +1,5 @@
-import { useMediaQuery, useTheme } from "@mui/material";
 import { CSSProperties, ReactNode } from "react";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 interface Props {
   children: ReactNode;

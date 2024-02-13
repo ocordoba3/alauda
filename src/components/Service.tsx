@@ -33,7 +33,6 @@ export const Service = ({ description, Icon, image, title }: Props) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-evenly",
         }}
       >
         {/* SERVICE ONE */}

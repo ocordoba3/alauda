@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { I18nextProvider } from "react-i18next";
-import i18n from "./translations/i18n.ts";
-import App from "./App.tsx";
+import i18n from "./translations/i18n";
+import App from "./App";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

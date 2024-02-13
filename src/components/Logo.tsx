@@ -1,16 +1,17 @@
 import { CSSProperties } from "react";
 import handleScroll from "../helpers/handleScroll";
-import logo from "/alauda_logo.png";
+import logo from "../../public/alauda_logo.png";
 
 interface Props {
-  styles: CSSProperties;
+  readonly styles: CSSProperties;
 }
 const Logo = ({ styles }: Props) => {
+  const handleClick = () => handleScroll("home");
   return (
     <img
       alt="Alauda Logo"
       loading="lazy"
-      onClick={() => handleScroll("home")}
+      onClick={handleClick}
       src={logo}
       style={{ cursor: "pointer", ...styles }}
     />

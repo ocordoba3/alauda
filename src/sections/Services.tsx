@@ -1,12 +1,12 @@
-import { Typography } from "@mui/material";
-import { SECTIONS, TITLE_STYLES } from "../utils/constants";
 import { Section } from "../components/Section";
-import { useTranslation } from "react-i18next";
+import { SECTIONS, TITLE_STYLES } from "../utils/constants";
 import { Service } from "../components/Service";
+import { Typography } from "@mui/material";
 import {
   Code as CodeIcon,
   RequestQuote as RequestQuoteIcon,
 } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 export const Services = () => {
   // Hooks

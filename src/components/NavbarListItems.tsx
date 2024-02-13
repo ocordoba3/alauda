@@ -1,10 +1,10 @@
-import { SECTIONS } from "../utils/constants";
 import { Button } from "@mui/material";
+import { SECTIONS } from "../utils/constants";
 import { useTranslation } from "react-i18next";
 import handleScroll from "../helpers/handleScroll";
 
 interface Props {
-  mediumDevice: boolean;
+  readonly mediumDevice: boolean;
 }
 
 export const NavbarListItems = ({ mediumDevice }: Props) => {

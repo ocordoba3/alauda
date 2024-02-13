@@ -1,6 +1,3 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import {
   Drawer,
   IconButton,
@@ -14,10 +11,13 @@ import {
   Menu as MenuIcon,
   ModeNight as ModeNightIcon,
 } from "@mui/icons-material";
-import { NavbarListItems } from "./NavbarListItems";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
+import { NavbarListItems } from "./NavbarListItems";
 import { useTranslation } from "react-i18next";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Logo from "./Logo";
+import Toolbar from "@mui/material/Toolbar";
 
 interface Props {
   setMode: Dispatch<SetStateAction<PaletteMode>>;
@@ -43,7 +43,7 @@ export default function Navbar({ setMode }: Props) {
   // JSX Elements to render
   const renderListItems = useCallback(
     () => <NavbarListItems mediumDevice />,
-    [mediumDevice]
+    [mediumDevice],
   );
 
   return (

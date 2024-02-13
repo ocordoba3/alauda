@@ -1,13 +1,12 @@
 @import "./styles/_theme-vars.module.scss";
 
 :root {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   margin: 0;
 }
-
 
 #home #movement_element {
   animation: movement 5s infinite;

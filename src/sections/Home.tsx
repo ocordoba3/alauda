@@ -1,14 +1,8 @@
-import {
-  Box,
-  Button,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import logo from "/light_logo.png";
-import { SECTIONS } from "../utils/constants";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Section } from "../components/Section";
+import { SECTIONS } from "../utils/constants";
 import { useTranslation } from "react-i18next";
+import logo from "../../public/light_logo.png";
 
 export const Home = () => {
   // Hooks
@@ -16,7 +10,6 @@ export const Home = () => {
   const { t } = useTranslation();
   // Constants
   const bgColor = theme.palette.background.default;
-  const mediumDevice = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleStart = () => {
     window.scrollTo({

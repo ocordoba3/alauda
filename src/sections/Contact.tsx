@@ -7,8 +7,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { SECTIONS, TITLE_STYLES } from "../utils/constants";
 import { Section } from "../components/Section";
+import { SECTIONS, TITLE_STYLES } from "../utils/constants";
 import { useTranslation } from "react-i18next";
 
 export const Contact = () => {

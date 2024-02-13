@@ -7,14 +7,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import Logo from "../components/Logo";
 import {
   Facebook as FacebookIcon,
   Instagram as InstagramIcon,
   X as XIcon,
 } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 import { colors } from "../styles/theme";
+import Logo from "../components/Logo";
 
 const sxIcon: SxProps<Theme> = { cursor: "pointer", m: 2 };
 
@@ -28,7 +28,7 @@ const Footer = () => {
   return (
     <footer
       style={{
-        marginTop: theme.spacing(6),
+        marginTop: theme.spacing(12),
         padding: theme.spacing(4),
         backgroundColor: theme.palette.primary.dark,
         color: theme.palette.common.white,
