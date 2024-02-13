@@ -2,9 +2,11 @@ import { Box, Button, Typography, useTheme } from "@mui/material";
 import logo from "/light_logo.png";
 import { SECTIONS } from "../utils/constants";
 import { Section } from "../components/Section";
+import { useTranslation } from "react-i18next";
 
 export const Home = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const bgColor = theme.palette.background.default;
 
   const handleStart = () => {
@@ -39,13 +41,13 @@ export const Home = () => {
         <img src={logo} alt="Alauda Logo" loading="lazy" width="40%" />
         {/* NAME */}
         <Typography variant="h1" sx={{ textAlign: "center" }}>
-          alauda
+          {t("title")}
         </Typography>
       </Box>
 
       {/* START BUTTON */}
       <Button variant="contained" onClick={handleStart}>
-        ¡Empecemos!
+        {t("general.start")}
       </Button>
     </Section>
   );

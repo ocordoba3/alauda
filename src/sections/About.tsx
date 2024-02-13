@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ABOUT_DATA, SECTIONS } from "../utils/constants";
 import { Section } from "../components/Section";
 import { useTranslation } from "react-i18next";
@@ -10,10 +10,17 @@ export const About = () => {
   return (
     <Section id={SECTIONS.about} styles={{ marginBottom: 40 }}>
       {ABOUT_DATA.map(({ sx, text, variant, Icon }) => (
-        <Typography key={uuid()} variant={variant} sx={sx}>
-          {Icon && <Icon />}
-          {t(text)}
-        </Typography>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+          }}
+        >
+          {Icon && <Icon color="secondary" />}
+          <Typography key={uuid()} variant={variant} sx={sx}>
+            {t(text)}
+          </Typography>
+        </Box>
       ))}
     </Section>
   );
