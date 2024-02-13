@@ -1,24 +1,68 @@
-import { Container, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Container,
+  SxProps,
+  Theme,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
+import Logo from "../components/Logo";
+import {
+  Facebook as FacebookIcon,
+  Instagram as InstagramIcon,
+  X as XIcon,
+} from "@mui/icons-material";
+import { colors } from "../styles/theme";
+
+const sxIcon: SxProps<Theme> = { cursor: "pointer", m: 2 };
 
 const Footer = () => {
   const theme = useTheme();
   const { t } = useTranslation();
-
+  const smallDevice = theme.breakpoints.up("md");
   return (
     <footer
       style={{
         marginTop: theme.spacing(6),
         padding: theme.spacing(4),
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.primary.dark,
         color: theme.palette.common.white,
       }}
     >
-      <Container maxWidth="lg">
-        <Typography variant="body1" align="center">
-          &copy; {new Date().getFullYear()}{" "}
-          {`${t("title")} - ${t("footer.copy_right")}`}
-        </Typography>
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "grid",
+          justifyContent: "center",
+          gridTemplateColumns: smallDevice ? "1fr 1fr" : "1fr",
+        }}
+      >
+        {/* Company Logo and Copy right */}
+        <Box
+          sx={{
+            textAlign: "center",
+            borderRight: smallDevice
+              ? `1px solid ${colors.lightBackground}`
+              : "none",
+          }}
+        >
+          <Logo styles={{ width: 200 }} />
+          <Typography variant="body1" align="center">
+            &copy; {new Date().getFullYear()}{" "}
+            {`${t("title")} - ${t("footer.copy_right")}`}
+          </Typography>
+        </Box>
+
+        {/* Social Media */}
+        <Box sx={{ textAlign: "center" }}>
+          <Typography variant="h6" align="center">
+            {t("footer.follow_us")}
+          </Typography>
+          <FacebookIcon sx={sxIcon} />
+          <InstagramIcon sx={sxIcon} />
+          <XIcon sx={sxIcon} />
+        </Box>
       </Container>
     </footer>
   );

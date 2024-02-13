@@ -35,7 +35,7 @@ export const Service = ({ description, Icon, image, title }: Props) => {
           <Box sx={{ alignItems: "center", display: "flex", mb: 2 }}>
             <Avatar
               sx={{
-                bgcolor: theme.palette.secondary.main,
+                bgcolor: theme.palette.primary.main,
                 width: 40,
                 height: 40,
                 mr: 2,

@@ -1,8 +1,13 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import logo from "/alauda_logo.png";
-import { Drawer, IconButton, PaletteMode, useTheme } from "@mui/material";
+import {
+  Drawer,
+  IconButton,
+  PaletteMode,
+  Tooltip,
+  useTheme,
+} from "@mui/material";
 import {
   LightMode as LightModeIcon,
   Menu as MenuIcon,
@@ -12,6 +17,7 @@ import { NavbarListItems } from "./NavbarListItems";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import handleScroll from "../helpers/handleScroll";
+import Logo from "./Logo";
 
 interface Props {
   setMode: Dispatch<SetStateAction<PaletteMode>>;
@@ -52,30 +58,24 @@ export default function Navbar({ setMode }: Props) {
             <MenuIcon />
           </IconButton>
           {/* LOGO */}
-          <img
-            alt="Alauda Logo"
-            loading="lazy"
-            onClick={() => handleScroll("home")}
-            src={logo}
-            style={{ cursor: "pointer" }}
-            width="100"
-          />
+          <Logo styles={{ width: 120 }} />
           {/* LIST OF LINKS */}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {renderListItems()}
           </Box>
           {/* HANDLE MODE */}
-          <IconButton
+          <Tooltip
+            arrow
             title={
               darkMode
                 ? t("navbar.switch_to_light_mode")
                 : t("navbar.switch_to_dark_mode")
             }
-            sx={{ ml: 1 }}
-            onClick={handleThemeMode}
           >
-            {darkMode ? <LightModeIcon /> : <ModeNightIcon />}
-          </IconButton>
+            <IconButton title="" sx={{ ml: 1 }} onClick={handleThemeMode}>
+              {darkMode ? <LightModeIcon /> : <ModeNightIcon />}
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
       <Drawer open={openDrawer} onClick={() => setOpenDrawer(false)}>

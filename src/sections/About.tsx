@@ -16,7 +16,7 @@ export const About = () => {
             display: "flex",
           }}
         >
-          {Icon && <Icon color="secondary" />}
+          {Icon && <Icon color="primary" />}
           <Typography key={uuid()} variant={variant} sx={sx}>
             {t(text)}
           </Typography>

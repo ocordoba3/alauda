@@ -78,7 +78,9 @@ export const Contact = () => {
             />
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained">Enviar</Button>
+            <Button variant="contained" sx={{ width: "100%" }}>
+              {t("general.send")}
+            </Button>
           </Grid>
         </Grid>
       </Box>

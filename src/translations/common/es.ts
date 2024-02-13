@@ -16,15 +16,17 @@ const es = {
         contact: {
             description_2: "¡Contáctanos hoy mismo para comenzar!",
             description: "En Alauda, estamos entusiasmados por la oportunidad de colaborar contigo para llevar tus ideas al siguiente nivel y alcanzar tus objetivos empresariales.",
-            title: `<Contactanos />`,
+            title: `<Contáctanos />`,
         },
         footer: {
-            copy_right: "Todos los derechos reservados."
+            copy_right: "Todos los derechos reservados.",
+            follow_us: "Siguenos en:"
         },
         general: {
             about: "Acerca de",
             contact: "Contacto",
             home: "Inicio",
+            send: "Enviar",
             services: "Servicios",
             start: "¡Comencemos!"
         },
@@ -37,7 +39,7 @@ const es = {
             service_1_desc: "Nuestra plataforma de facturación es el resultado de años de investigación, desarrollo y retroalimentación del cliente. Diseñada para simplificar y agilizar el proceso de facturación, nuestra plataforma ofrece características avanzadas, seguridad robusta y una interfaz intuitiva para una experiencia de usuario sin problemas.",
             service_1_title: "Facturación Innovadora",
             service_2_desc: "Contamos con un equipo de desarrolladores altamente capacitados y con experiencia en una amplia gama de tecnologías y plataformas, lo que nos permite crear soluciones personalizadas que se adaptan perfectamente a las necesidades específicas de cada cliente.",
-            service_2_title: "Desarrollo a Medida",
+            service_2_title: "Desarrollo a la Medida",
             title: `<Nuestros servicios />`,
         },
         title: "Alauda",
