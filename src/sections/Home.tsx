@@ -1,13 +1,22 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import logo from "/light_logo.png";
 import { SECTIONS } from "../utils/constants";
 import { Section } from "../components/Section";
 import { useTranslation } from "react-i18next";
 
 export const Home = () => {
+  // Hooks
   const theme = useTheme();
   const { t } = useTranslation();
+  // Constants
   const bgColor = theme.palette.background.default;
+  const mediumDevice = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleStart = () => {
     window.scrollTo({
@@ -25,7 +34,6 @@ export const Home = () => {
         display: "grid",
         gridTemplateRows: "50% 10%",
         height: "100vh",
-        padding: "0",
         position: "relative",
         zIndex: 11000,
       }}

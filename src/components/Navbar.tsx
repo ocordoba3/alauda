@@ -6,6 +6,7 @@ import {
   IconButton,
   PaletteMode,
   Tooltip,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import {
@@ -16,7 +17,6 @@ import {
 import { NavbarListItems } from "./NavbarListItems";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import handleScroll from "../helpers/handleScroll";
 import Logo from "./Logo";
 
 interface Props {
@@ -30,7 +30,7 @@ export default function Navbar({ setMode }: Props) {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   // Consts
-  const smallDevice = theme.breakpoints.up("md");
+  const mediumDevice = useMediaQuery(theme.breakpoints.up("md"));
   const darkMode = theme.palette.mode === "dark";
 
   // Methods
@@ -42,14 +42,14 @@ export default function Navbar({ setMode }: Props) {
 
   // JSX Elements to render
   const renderListItems = useCallback(
-    () => <NavbarListItems smallDevice />,
-    [smallDevice]
+    () => <NavbarListItems mediumDevice />,
+    [mediumDevice]
   );
 
   return (
     <>
-      <AppBar position="fixed">
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+      <AppBar position="fixed" sx={{ left: 0 }}>
+        <Toolbar sx={{ justifyContent: "space-between", left: 0 }}>
           <IconButton
             onClick={() => setOpenDrawer(true)}
             sx={{ display: { xs: "block", md: "none" }, mr: 1 }}

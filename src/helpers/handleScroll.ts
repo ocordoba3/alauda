@@ -13,16 +13,9 @@ const handleScroll = (element: Element) => {
         case "home":
             window.scrollTo({ top: 0, behavior: "smooth" });
             break;
-        case "about":
-        case "services":
-            window.scrollTo({
-                top: document.getElementById(element)?.offsetTop || 0,
-                behavior: "smooth",
-            });
-            break;
         default:
             window.scrollTo({
-                top: document.body.scrollHeight,
+                top: document.getElementById(element)?.offsetTop || 0,
                 behavior: "smooth",
             });
             break;

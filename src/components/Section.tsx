@@ -1,4 +1,4 @@
-import { useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { CSSProperties, ReactNode } from "react";
 
 interface Props {
@@ -12,7 +12,7 @@ export const Section = ({ children, id, styles }: Props) => {
   const theme = useTheme();
 
   // Consts
-  const smallDevice = theme.breakpoints.up("md");
+  const mediumDevice = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <section
@@ -21,8 +21,8 @@ export const Section = ({ children, id, styles }: Props) => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        padding: !smallDevice ? "0 2rem" : "0 15rem",
-        paddingTop: smallDevice ? "6rem" : "2rem",
+        padding: mediumDevice ? "0 15rem" : "0 2rem",
+        paddingTop: mediumDevice ? "6rem" : "4rem",
         width: "100%",
         ...styles,
       }}

@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import handleScroll from "../helpers/handleScroll";
 
 interface Props {
-  smallDevice: boolean;
+  mediumDevice: boolean;
 }
 
-export const NavbarListItems = ({ smallDevice }: Props) => {
+export const NavbarListItems = ({ mediumDevice }: Props) => {
   // Hooks
   const { t } = useTranslation();
 
@@ -24,9 +24,9 @@ export const NavbarListItems = ({ smallDevice }: Props) => {
             onClick={() => handleScroll(el)}
             color="inherit"
             sx={{
-              ml: smallDevice ? 0 : 3,
-              py: smallDevice ? 2 : 0,
-              px: smallDevice ? 4 : 0,
+              ml: mediumDevice ? 0 : 3,
+              py: mediumDevice ? 2 : 0,
+              px: mediumDevice ? 4 : 0,
             }}
           >
             {t(`general.${el}`)}

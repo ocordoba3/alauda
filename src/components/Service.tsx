@@ -1,4 +1,10 @@
-import { Avatar, Box, Typography, useTheme } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 interface Props {
   description: string;
@@ -12,13 +18,13 @@ export const Service = ({ description, Icon, image, title }: Props) => {
   const theme = useTheme();
 
   // Constants
-  const smallDevice = theme.breakpoints.up("md");
+  const mediumDevice = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: smallDevice ? "1fr 1fr" : "1fr",
+        gridTemplateColumns: mediumDevice ? "1fr 1fr" : "1fr",
         gap: 4,
         mb: 3,
       }}

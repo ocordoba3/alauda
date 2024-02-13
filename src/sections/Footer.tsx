@@ -4,6 +4,7 @@ import {
   SxProps,
   Theme,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -18,9 +19,12 @@ import { colors } from "../styles/theme";
 const sxIcon: SxProps<Theme> = { cursor: "pointer", m: 2 };
 
 const Footer = () => {
+  // Hooks
   const theme = useTheme();
   const { t } = useTranslation();
-  const smallDevice = theme.breakpoints.up("md");
+
+  // Constants
+  const mediumDevice = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <footer
       style={{
@@ -34,17 +38,22 @@ const Footer = () => {
         maxWidth="lg"
         sx={{
           display: "grid",
+          gridTemplateColumns: mediumDevice ? "1fr 1fr" : "1fr",
           justifyContent: "center",
-          gridTemplateColumns: smallDevice ? "1fr 1fr" : "1fr",
+          p: 0,
         }}
       >
         {/* Company Logo and Copy right */}
         <Box
           sx={{
-            textAlign: "center",
-            borderRight: smallDevice
+            borderBottom: !mediumDevice
               ? `1px solid ${colors.lightBackground}`
               : "none",
+            borderRight: mediumDevice
+              ? `1px solid ${colors.lightBackground}`
+              : "none",
+            p: 2,
+            textAlign: "center",
           }}
         >
           <Logo styles={{ width: 200 }} />
@@ -55,7 +64,7 @@ const Footer = () => {
         </Box>
 
         {/* Social Media */}
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: "center", p: 2 }}>
           <Typography variant="h6" align="center">
             {t("footer.follow_us")}
           </Typography>
