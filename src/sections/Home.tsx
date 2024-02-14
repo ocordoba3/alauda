@@ -54,9 +54,11 @@ export const Home = () => {
       </Box>
 
       {/* START BUTTON */}
-      <Button variant="contained" onClick={handleStart}>
-        {t("general.start")}
-      </Button>
+      <Box sx={{ textAlign: "center" }}>
+        <Button onClick={handleStart} sx={{ width: "50%" }} variant="contained">
+          {t("general.start")}
+        </Button>
+      </Box>
     </Section>
   );
 };
