@@ -56,8 +56,8 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
-          <Logo styles={{ width: 200 }} />
-          <Typography variant="body1" align="center">
+          <Logo />
+          <Typography variant="body1" align="center" mt={2}>
             &copy; {new Date().getFullYear()}{" "}
             {`${t("title")} - ${t("footer.copy_right")}`}
           </Typography>

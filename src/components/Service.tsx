@@ -48,15 +48,25 @@ export const Service = ({ description, Icon, image, title }: Props) => {
             >
               <Icon />
             </Avatar>
-            <Typography variant="h4">{title}</Typography>
+            <Typography variant="h5" fontWeight={400}>
+              {title}
+            </Typography>
           </Box>
           <Typography variant="h6" sx={{ textAlign: "justify" }}>
             {description}
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ textAlign: "center" }}>
-        <img width="80%" src={image} alt={`Image for ${title}`} />
+      <Box
+        sx={{ alignItems: "center", display: "flex", justifyContent: "center" }}
+      >
+        <img
+          alt={`Image for ${title}`}
+          height="auto"
+          src={image}
+          srcSet={`${image} 500w`}
+          width="80%"
+        />
       </Box>
     </Box>
   );

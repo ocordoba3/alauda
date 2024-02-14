@@ -43,7 +43,7 @@ export default function Navbar({ setMode }: Props) {
   // JSX Elements to render
   const renderListItems = useCallback(
     () => <NavbarListItems mediumDevice />,
-    [mediumDevice],
+    [mediumDevice]
   );
 
   return (
@@ -58,7 +58,7 @@ export default function Navbar({ setMode }: Props) {
             <MenuIcon />
           </IconButton>
           {/* LOGO */}
-          <Logo styles={{ width: 120 }} />
+          <Logo />
           {/* LIST OF LINKS */}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             {renderListItems()}

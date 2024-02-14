@@ -2,7 +2,7 @@ import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Section } from "../components/Section";
 import { SECTIONS } from "../utils/constants";
 import { useTranslation } from "react-i18next";
-import logo from "../../public/light_logo.png";
+import logo from "../assets/light_logo.webp";
 
 export const Home = () => {
   // Hooks
@@ -39,7 +39,14 @@ export const Home = () => {
           width: "100%",
         }}
       >
-        <img src={logo} alt="Alauda Logo" loading="lazy" width="40%" />
+        <img
+          alt="Alauda Logo"
+          height="auto"
+          loading="lazy"
+          src={logo}
+          srcSet={`${logo} 500w`}
+          width="40%"
+        />
         {/* NAME */}
         <Typography variant="h1" sx={{ textAlign: "center" }}>
           {t("title")}

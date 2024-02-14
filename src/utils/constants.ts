@@ -17,7 +17,7 @@ export const TITLE_STYLES: SxProps<Theme> = {
 };
 
 const SUBTITLE_STYLES: SxProps<Theme> = {
-  fontWeight: 400,
+  fontWeight: 500,
   mb: 2,
   width: "100%",
 };
@@ -40,7 +40,7 @@ export const ABOUT_DATA: ValuesObj[] = [
   {
     sx: SUBTITLE_STYLES,
     text: "about.mision_title",
-    variant: "h4",
+    variant: "h5",
   },
   {
     sx: TEXT_STYLES,
@@ -50,7 +50,7 @@ export const ABOUT_DATA: ValuesObj[] = [
   {
     sx: SUBTITLE_STYLES,
     text: "about.values_title",
-    variant: "h4",
+    variant: "h5",
   },
   {
     Icon: CheckIcon,

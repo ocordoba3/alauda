@@ -14,30 +14,14 @@ body {
 
 @keyframes movement {
   0% {
-    scale: 1;
+    scale: 0.6;
   }
 
   50% {
-    scale: 1.3;
+    scale: 0.8;
   }
 
   100% {
-    scale: 1;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  @keyframes movement {
-    0% {
-      scale: 0.6;
-    }
-
-    50% {
-      scale: 0.8;
-    }
-
-    100% {
-      scale: 0.6;
-    }
+    scale: 0.6;
   }
 }

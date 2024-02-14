@@ -7,6 +7,8 @@ import {
   RequestQuote as RequestQuoteIcon,
 } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
+import platform_img from "../assets/platform.webp";
+import software_img from "../assets/software-a-medida.webp";
 
 export const Services = () => {
   // Hooks
@@ -20,13 +22,13 @@ export const Services = () => {
       <Service
         Icon={() => <RequestQuoteIcon />}
         description={t("services.service_1_desc")}
-        image="https://solopine.com/willow/wp-content/uploads/2014/04/services-img.png"
+        image={platform_img}
         title={t("services.service_1_title")}
       />
       <Service
         Icon={() => <CodeIcon />}
         description={t("services.service_2_desc")}
-        image="https://www.promentwebsolutions.cat/wp-content/uploads/2018/06/software-a-medida-1080x936.jpg"
+        image={software_img}
         title={t("services.service_2_title")}
       />
     </Section>
